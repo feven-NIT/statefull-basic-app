@@ -13,7 +13,11 @@ oc apply -f  manifest/postgres.yaml
 oc apply -f manifest/quarkus-app-config.yaml
 oc create secret generic postgres-credentials -n todo-demo    --from-literal=POSTGRES_USER=task-user     --from-literal=POSTGRES_PASSWORD=mysecretpassword     --from-literal=POSTGRES_DB=task     --from-literal=POSTGRES_PORT=5432
 ```
+Get the url
 
+```shell
+oc get route -n todo-demo -o json | jq -r '.items[0].spec.host' | sed 's/^/https:\/\//'
+```
 
 # DIY Package the app
 
