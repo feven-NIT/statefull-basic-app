@@ -1,6 +1,6 @@
 Repo for a todo app statefull application with Quarkus and Postgresql
 
-#Quickstart
+# Quickstart
 
 ```shell
 git clone https://github.com/feven-redhat/statefull-basic-app.git
