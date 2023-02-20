@@ -17,6 +17,7 @@ oc create secret generic postgres-credentials -n todo-demo    --from-literal=POS
 
 # DYI Package the app
 
+```shell
 cd todo-demo
 
 ./mvnw package
@@ -25,9 +26,11 @@ podman build -f src/main/docker/Dockerfile.jvm -t quay.io/feven/todoapp:latest .
 podman tag quay.io/feven/todoapp:latest quay.io/feven/todoapp:$APP_VERSION
 podman push quay.io/feven/todoapp:$APP_VERSION
 podman push quay.io/feven/todoapp:latest   
+```
 
 # Clean
 
+```shell
 oc delete ns demo-app
-
+```
  
