@@ -8,14 +8,14 @@ cd statefull-basic-app
 ```
 
 ```shell
-oc apply -f todo-app.yaml
-oc apply -f  postgres.yaml
-oc apply -f quarkus-app-config.yaml
+oc apply -f manifest/todo-app.yaml
+oc apply -f  manifest/postgres.yaml
+oc apply -f manifest/quarkus-app-config.yaml
 oc create secret generic postgres-credentials -n todo-demo    --from-literal=POSTGRES_USER=task-user     --from-literal=POSTGRES_PASSWORD=mysecretpassword     --from-literal=POSTGRES_DB=task     --from-literal=POSTGRES_PORT=5432
 ```
 
 
-# DYI Package the app
+# DIY Package the app
 
 ```shell
 cd todo-demo
