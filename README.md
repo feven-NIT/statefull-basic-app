@@ -31,6 +31,6 @@ podman push quay.io/feven/todoapp:latest
 # Clean
 
 ```shell
-oc delete ns demo-app
+oc delete ns todo-demo
 ```
  
