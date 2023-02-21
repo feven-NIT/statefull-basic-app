@@ -7,6 +7,18 @@ git clone https://github.com/feven-redhat/statefull-basic-app.git
 cd statefull-basic-app
 ```
 
+## local environment
+
+```shell
+podman run --name postgres-db -e POSTGRES_USER=feven -e POSTGRES_PASSWORD=redhat -p 5432:5432 -d postgres
+```
+
+```shell
+mvn quarkus:dev
+```
+
+## Openshift
+
 ```shell
 oc apply -f manifest/todo-app.yaml
 oc apply -f  manifest/postgres.yaml
