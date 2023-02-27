@@ -7,7 +7,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-app
-  namesapce: todo-demo
+  namespace: todo-demo
   labels:
     app: todo-app
 spec:
