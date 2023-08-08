@@ -34,7 +34,7 @@ oc get route -n todo-demo -o json | jq -r '.items[0].spec.host' | sed 's/^/https
 # DIY Package the app
 
 ```shell
-cd todo-demo
+cd todo-app
 
 ./mvnw package
 

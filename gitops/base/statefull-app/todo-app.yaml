@@ -28,10 +28,6 @@ spec:
               mountPath: /deployments/config
           ports:
             - containerPort: 8080
-      volumes:
-        - name: app-config
-          configMap:
-            name: quarkus-app-config
 ---
 apiVersion: v1
 kind: Service
