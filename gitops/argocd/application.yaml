@@ -7,7 +7,7 @@ spec:
   project: gxo
   source:
     repoURL: https://github.com/feven-redhat/statefull-basic-app.git
-    targetRevision: master
+    targetRevision: main
     path: gitops/base
   destination:
     server: https://kubernetes.default.svc
