@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+#app
+  - ./statefull-app/postgres.yaml
+  - ./statefull-app/quarkus-app-config.yaml  
+  - ./statefull-app/todo-app.yaml
