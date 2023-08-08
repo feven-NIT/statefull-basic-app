@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-credentials
+  namespace: todo-demo
+type: Opaque
+data:
+  POSTGRES_USER: dGFzay11c2Vy   # base64-encoded value for 'task-user'
+  POSTGRES_PASSWORD: bXlzZWNyZXRwYXNzd29yZA==   # base64-encoded value for 'mysecretpassword'
+  POSTGRES_DB: dGFzaw==   # base64-encoded value for 'task'
+  POSTGRES_PORT: NTQzMg==   # base64-encoded value for '5432'
+

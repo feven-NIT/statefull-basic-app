@@ -5,3 +5,4 @@ resources:
   - ./statefull-app/postgres.yaml
   - ./statefull-app/quarkus-app-config.yaml  
   - ./statefull-app/todo-app.yaml
+  - ./statefull-app/postgres-creds.yaml
