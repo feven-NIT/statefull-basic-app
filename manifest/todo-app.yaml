@@ -28,6 +28,27 @@ spec:
               mountPath: /deployments/config
           ports:
             - containerPort: 8080
+          env:
+          - name: POSTGRESQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: POSTGRES_USER
+          - name: POSTGRESQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: POSTGRES_PASSWORD
+          - name: POSTGRESQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: POSTGRES_DB
+          - name: POSTGRESQL_PORT
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: POSTGRES_PORT
       volumes:
         - name: app-config
           configMap:
