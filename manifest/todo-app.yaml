@@ -22,13 +22,14 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: quay.io/neutron-it/todoapp:latest
-          volumeMounts:
-            - name: app-config
-              mountPath: /deployments/config
+          image: quay.io/neutron-it/todoapp:v4
           ports:
             - containerPort: 8080
           env:
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
           - name: POSTGRESQL_USER
             valueFrom:
               secretKeyRef:
@@ -49,10 +50,6 @@ spec:
               secretKeyRef:
                 name: postgres-credentials
                 key: POSTGRES_PORT
-      volumes:
-        - name: app-config
-          configMap:
-            name: quarkus-app-config
 ---
 apiVersion: v1
 kind: Service
